@@ -7,29 +7,13 @@ const createDanArray = () => {
   return Array.from({ length: 19 }, (_, index) => index + 1);
 };
 const createFactorArray = () => {
-  return Array.from({ length: 9 }, (_, index) => index + 1);
+  return Array.from({ length: 19 }, (_, index) => index + 1);
 };
 
 const danArray = ref(createDanArray());
 const selectedDan = ref(1);
 const chosenNumber = ref();
 const findOptionState = ref(false);
-// const findOptionStateMessage = ref("포함되어있는 숫자 찾기");
-
-// const changeFindOptionStateMessage = () => {
-//   switch (findOptionState.value) {
-//     case true:
-//       console.log(findOptionState.value);
-//       findOptionStateMessage.value = "정확히 일치하는 숫자 찾기";
-//       break;
-//     case false:
-//       console.log(findOptionState.value);
-//       findOptionStateMessage.value = "포함되어있는 숫자 찾기";
-//       break;
-//   }
-// };
-
-const findOptionStateMsg = computed(() => (findOptionState.value ? '정확히 일치하는 숫자 찾기' : '포함되어있는 숫자 찾기'))
 
 const createResultObjects = () => {
   const objects = Array();
@@ -59,7 +43,7 @@ const createResultObjects = () => {
   return objects;
 };
 
-
+const findOptionStateMsg = computed(() => (findOptionState.value ? '정확히 일치하는 숫자 찾기' : '포함되어있는 숫자 찾기'))
 const resultObject = computed(createResultObjects);
 </script>
 
